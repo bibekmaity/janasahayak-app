@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-toolbar [color]="header_color">
+    <ion-row>
+      <ion-col text-center col-9>
+        <ion-title text-wrap style="margin-top: 1rem;">ঠিকানা - ২</ion-title>
+      </ion-col>
+      <ion-col text-right>
+        <img alt="logo" height="40" src="assets/imgs/bblogo.png" end>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <!-- <ion-navbar [color]="header_color" text-center>
+    <ion-title>ঠিকানা - ২</ion-title>
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="compl_landmark" placeholder="ল্যান্ডমার্ক (নিকটতম অবস্থান)" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="email" [(ngModel)]="compl_email" placeholder="আপনার ইমেইল আইডি দিন"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea elastic-text-area [(ngModel)]="compl_description" placeholder="অভিযোগের বিবরণ টাইপ করুন" required>
+      </ion-textarea>
+    </ion-item>
+
+
+  </ion-list>
+
+  <!-- <ion-row>
+    <ion-col text-center>
+      <img src="assets/imgs/photo.png" style="">
+    </ion-col>
+  </ion-row> -->
+
+  
+
+  <ion-row>
+    <ion-col class=".no-pad-col">
+      <button ion-button block color="teal" (tap)="onDataSubmitThree()">সাবমিট করুন</button>
+    </ion-col>
+    <ion-col class=".no-pad-col">
+      <button ion-button block color="danger" (tap)="onDiscardThree()">বাতিল করুন</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

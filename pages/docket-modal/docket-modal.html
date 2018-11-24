@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar color="darkBlue" text-center>
+    <ion-title>{{modalHeader}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div [hidden]="hideSuccess">
+
+    <ion-row>
+      <ion-col text-center>
+        <p class="generic-msg">
+          {{paramData.msg}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <p class="docket-txt">
+          {{paramData.docket}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <p>
+          আপনি কি আপনার প্রদেয় তথ্যের সঙ্গে কোনো ছবি আপলোড করতে চান ?
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class=".no-pad-col">
+        <!-- <button ion-button block color="teal" (tap)="onDataSubmitOne()">সাবমিট করুন</button> -->
+        <button ion-button block color="teal" (tap)="open_action_sheet()">হ্যাঁ</button>
+      </ion-col>
+      <ion-col class=".no-pad-col">
+        <button ion-button block color="danger" (tap)="dismiss_modal()">না</button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <div [hidden]="!hideSuccess">
+    <ion-row>
+      <ion-col text-center>
+        <p class="generic-msg">
+          {{paramData.msg}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>      
+      <ion-col class=".no-pad-col">
+        <button ion-button block color="danger" (tap)="dismiss_modal()">ঠিক আছে !</button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+
+</ion-content>

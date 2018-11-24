@@ -1,0 +1,98 @@
+<ion-header>
+
+  <ion-toolbar [color]="header_color">
+    <ion-row>
+      <ion-col text-center col-9>
+          <ion-title text-wrap style="margin-top: 1rem;">{{default_header}}</ion-title>
+      </ion-col>
+      <ion-col text-right>
+          <img alt="logo" height="40" src="assets/imgs/bblogo.png" end>
+      </ion-col>
+    </ion-row>    
+  </ion-toolbar>
+  <!-- <ion-navbar [color]="header_color" >
+    <ion-title text-wrap>{{default_header}}</ion-title>
+    <img alt="logo" height="30"   src="assets/imgs/bblogo.png" item-end> 
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>রেজিস্টার্ড মোবাইল নং</ion-label>
+      <ion-input type="text" disabled [(ngModel)]="userData.mobile_num"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>আপনার নাম</ion-label>
+      <ion-input type="text" disabled [(ngModel)]="userData.user"></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-row>
+    <ion-col padding>
+      অ্যাপটির মাধ্যমে আপনি কি করতে চান তা জানান
+    </ion-col>
+  </ion-row>
+
+  <ion-list radio-group [(ngModel)]="compl_flag" (ionChange)="determineTypeSubmission()">
+    <ion-item>
+      <ion-label>প্রশাসনকে পরামর্শ /তথ্য প্রদান</ion-label>
+      <ion-radio value="s" color="darkGreen"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>অভিযোগ নথিভুক্তিকরণ</ion-label>
+      <ion-radio value="c" color="danger"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item [hidden]="hide_complain">
+      <ion-label>অভিযোগের ধরণ নির্বাচন করুন</ion-label>
+      <ion-select [(ngModel)]="compl_type" okText="ঠিক আছে" cancelText="এগুলি নয়">
+        <ion-option [value]="item.comp_type_id" *ngFor="let item of complain_types_arr">{{item.comp_type}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item>{{complainType}}</ion-item> -->
+
+    <!-- <ion-item>
+      <ion-label>যে কতৃপক্ষকে জানাতে চান</ion-label>
+      <ion-select [(ngModel)]="compl_dept" okText="ঠিক আছে" cancelText="এগুলি নয়">
+        <ion-option [value]="item.dept_id" *ngFor="let item of complain_depts_arr">{{item.dept_nm}}</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+    <!-- <ion-item>
+      <ion-label>জেলা নির্বাচন করুন</ion-label>
+      <ion-select [(ngModel)]="compl_dist" okText="ঠিক আছে" cancelText="এগুলি নয়">
+        <ion-option [value]="item.dist_id" *ngFor="let item of compalin_dist_arr">{{item.dist_nm}}</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+  </ion-list>
+
+  <!-- <ion-row>
+    <ion-col text-center>
+      <img src="assets/imgs/photo.png" class="photo">
+    </ion-col>
+  </ion-row> -->
+
+  <!-- <ion-row>
+    <ion-col text-center>
+      <button ion-button block large color="dark">একটি ছবি আপলোড করুন</button>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-row>
+    <ion-col class=".no-pad-col">
+      <button ion-button block color="teal" (tap)="onDataSubmitOne()">সাবমিট করুন</button>
+      <!--<button ion-button block color="teal" (tap)="open_modal_page()">সাবমিট করুন</button> -->
+    </ion-col>
+    <ion-col class=".no-pad-col">
+      <button ion-button block color="danger" (tap)="onDiscardOne()">বাতিল করুন</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

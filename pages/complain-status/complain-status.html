@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="darkGreen" text-center>
+    <ion-title>অভিযোগের স্থিতি জানুন</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list *ngFor="let report of reports_arr">
+    <ion-item text-wrap>
+      <ion-icon name="ios-bookmark" item-start [color]="(report.status == 'P')? 'danger' : 'secondary'"></ion-icon>
+      <h2>{{'Docket No:  '+report.ref_no}}</h2>
+      <h3>{{report.comp_type}}</h3>
+      <p>{{'Received on:  '+report.ref_date}}</p>
+      <p [hidden]="(report.status == 'P')? true : false ">{{'Resolved on:  '+report.close_date}}</p>
+    </ion-item>    
+  </ion-list>
+
+</ion-content>

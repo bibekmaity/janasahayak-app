@@ -1,0 +1,83 @@
+<ion-header>
+
+  <ion-toolbar [color]="header_color">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="pop()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col text-center col-9>
+        <ion-title text-wrap style="margin-top: 1rem;">ঠিকানা - ১</ion-title>
+      </ion-col>
+      <ion-col text-right>
+        <img alt="logo" height="40" src="assets/imgs/bblogo.png" end>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+  <!-- <ion-navbar [color]="header_color" text-center>
+    <ion-title>ঠিকানা - ১</ion-title>
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item class="indented-item">
+      <ion-label>ব্লক নির্বাচন করুন</ion-label>
+      <ion-select [(ngModel)]="compl_block" okText="ঠিক আছে" cancelText="এগুলি নয়" (ionChange)="onBlockSelect(compl_block)">
+        <ion-option [value]="item.block_id" *ngFor="let item of complain_types_block_arr">{{item.block_nm_ben}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item class="indented-item">
+      <ion-label>থানা নির্বাচন করুন</ion-label>
+      <ion-select [(ngModel)]="compl_ps" okText="ঠিক আছে" cancelText="এগুলি নয়">
+        <ion-option [value]="item.ps_id" *ngFor="let item of complain_types_ps_arr">{{item.ps_nm_ben}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-textarea elastic-text-area [(ngModel)]="compl_address" placeholder="আপনার ঠিকানা টাইপ করুন" required>
+      </ion-textarea>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-textarea elastic-text-area [(ngModel)]="compl_road" placeholder="রাস্তার নাম">
+      </ion-textarea>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="compl_road" placeholder="রাস্তার নাম"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="compl_locality" placeholder="পাড়া / এলাকা"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="compl_vill_town" placeholder="গ্রাম / শহর"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="compl_pincode" placeholder="আপনার পিনকোড"></ion-input>
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-row>
+    <ion-col class=".no-pad-col">
+      <button ion-button block color="teal" (tap)="onDataSubmitTwo()">সাবমিট করুন</button>
+    </ion-col>
+    <ion-col class=".no-pad-col">
+      <button ion-button block color="danger" (tap)="onDiscardTwo()">বাতিল করুন</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

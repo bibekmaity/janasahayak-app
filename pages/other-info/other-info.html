@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="darkGreen" text-center>
+    <ion-title>অন্যান্য সংশ্লিষ্ট তথ্যাবলী</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of infoArr; let i = index" (tap)="itemSelected(item)" text-wrap [ngClass]="(i % 2 == 0) ? 'off-white-item' : 'white-item'">
+      <h2 class="dept">{{ item.department }}</h2>
+      <h3>{{item.officer}}</h3>
+      <h4 class="phone">📞  {{(item.mobile != null) ? item.mobile: ""}}  {{(item.land_line != null) ? "/ "+item.land_line: ""}}</h4>
+      <p>{{item.scheme}}</p>
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-row>
+    <ion-col>
+      <button ion-button block color="teal" (tap)="onLogOut()">লগ-আউট করুন</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

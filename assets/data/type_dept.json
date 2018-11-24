@@ -1,0 +1,46 @@
+{
+    "complain_types": [
+        {
+            "type_name": "কমপ্লেন ধরন এক",
+            "type_code": "1"
+        },
+        {
+            "type_name": "কমপ্লেন ধরন দুই",
+            "type_code": "2"
+        },
+        {
+            "type_name": "কমপ্লেন ধরন তিন",
+            "type_code": "3"
+        },
+        {
+            "type_name": "কমপ্লেন ধরন চার",
+            "type_code": "4"
+        },
+        {
+            "type_name": "কমপ্লেন ধরন ইত্যাদি",
+            "type_code": "..nth"
+        }
+    ],
+    "complain_depts": [
+        {
+            "dept_name": "ডিপার্টমেন্ট এক",
+            "dept_code": "a"
+        },
+        {
+            "dept_name": "ডিপার্টমেন্ট দুই",
+            "dept_code": "b"
+        },
+        {
+            "dept_name": "ডিপার্টমেন্ট তিন",
+            "dept_code": "c"
+        },
+        {
+            "dept_name": "ডিপার্টমেন্ট চার",
+            "dept_code": "d"
+        },
+        {
+            "dept_name": "ডিপার্টমেন্ট ইত্যাদি",
+            "dept_code": "e.."
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+
+<ion-header>
+
+    <ion-navbar color="darkGreen" text-center>
+    <ion-title>বিশদ  বিবরণ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header text-wrap class="header-txt">
+      {{detail.department}}
+    </ion-card-header>
+    <ion-item text-wrap>
+      <h2 class="bold-class">Status:</h2>
+      <h4>{{detail.status}}</h4>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2 class="bold-class">Officer:</h2>
+      <h4>{{detail.officer}}</h4>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2 class="bold-class">Land Line:</h2>
+      <h4>{{detail.land_line}}</h4>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2 class="bold-class">Mobile:</h2>
+      <h4>{{detail.mobile}}</h4>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2 class="bold-class">Email:</h2>
+      <h4>{{detail.email}}</h4>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2 class="bold-class">Schemes</h2>
+      <h5>{{detail.scheme}}</h5>
+    </ion-item>
+  </ion-card>
+</ion-content>

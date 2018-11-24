@@ -1,0 +1,27 @@
+<ion-header>
+
+  <!--   <ion-navbar>
+    <ion-title>Landing</ion-title>
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content class="blue-bg">
+  <ion-slides autoplay="5000" loop="true">
+    <ion-slide *ngFor="let item of landingPageSlider" style="height:70%;">
+
+      <img [src]="item.imgpath" >
+
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button full large color="darkBlue" (tap)="onWelcomeTap()">স্বাগতম</button>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+
+
+
+
+</ion-content>
